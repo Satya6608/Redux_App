@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux'
 export default function Navbar() {
+    const cart = useSelector(state=>state.cart)
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-success">
@@ -16,8 +17,8 @@ export default function Navbar() {
                             </li>
                             <button type="button" className="btn btn-primary position-relative">
                                 Cart
-                                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    1+
+                                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
+                                    {cart}
                                     <span className="visually-hidden">unread messages</span>
                                 </span>
                             </button>
